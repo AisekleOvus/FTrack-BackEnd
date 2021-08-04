@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<!--Подключаем библиотеку-->
+	<script src="https://yastatic.net/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+    <img id="location" src/>
+	<script>
+(function worker() {
+  $.ajax({
+    url: 'http://torodoro.ru:8080/coordinates/last', 
+    success: function(data) {
+      var jsnObj = $.parseJSON(data);
+      $("#location").attr('src','https://static-maps.yandex.ru/1.x/?ll=' + jsnObj.longitude + ',' + jsnObj.latitude + '&size=450,450&z=13&l=map&pt=' + jsnObj.longitude + ',' + jsnObj.latitude + ',vkgrm');
+    },
+    complete: function() {
+      // Schedule the next request when the current one's complete
+      setTimeout(worker, 5000);
+    }
+  });
+})();
+    </script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+com/ftrack/Ftrack/CoordinatesReceiver.class
+com/ftrack/Ftrack/LoadDatabase.class
+com/ftrack/Ftrack/CoordinatesNotFoundAdvice.class
+com/ftrack/Ftrack/CoordinatesTools.class
+com/ftrack/Ftrack/FTrackApplication.class
+com/ftrack/Ftrack/Coordinates.class
+com/ftrack/Ftrack/CoordinatesNotFoundException.class
